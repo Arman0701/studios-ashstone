@@ -17,7 +17,7 @@
         @include bp(tablet) {
             top: 250%;
             right: 0;
-            width: calc(100vw - 20px - 14px);
+            width: calc(100vw - 1.25rem - 0.875rem);
         }
 
         input {

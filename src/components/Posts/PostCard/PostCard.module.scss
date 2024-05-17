@@ -60,7 +60,7 @@ $gapBtwSections: 1rem;
 }
 
 .cardContainer {
-    max-width: calc((100% - 80px) / 3);
+    max-width: calc((100% - 5rem) / 3);
     display: flex;
     flex-direction: column;
     gap: $gapBtwSections;
@@ -70,7 +70,7 @@ $gapBtwSections: 1rem;
     }
 
     @include bp(laptop) {
-        max-width: calc((100vw - 40px - 40px) / 2);
+        max-width: calc((100vw - 2.5rem - 2.5rem) / 2);
     }
 }
 
