@@ -1,0 +1,10 @@
+@import "../../sass/mixins.scss";
+
+.menuButton {
+    @include normalizeBtn();
+
+    .menuIcon {
+        width: 25px;
+        height: 16px;
+    }
+}

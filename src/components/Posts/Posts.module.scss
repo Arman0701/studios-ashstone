@@ -1,0 +1,28 @@
+@import "../../sass/colors.scss";
+@import "../../sass/mixins.scss";
+
+.postsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 40px;
+    padding: 3rem 0;
+
+    @include bp(mobile) {
+        gap: 32px 40px;
+    }
+
+    @include bp(tablet) {
+        gap: 40px;
+    }
+
+    .notFoundMessageBox {
+        margin: 0 auto;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 14px;
+        border-radius: 14px;
+        background: $main-gray;
+        color: black;
+        font-weight: 400;
+    }
+}

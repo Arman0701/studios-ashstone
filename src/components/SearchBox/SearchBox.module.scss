@@ -1,0 +1,40 @@
+@import "../../sass/mixins.scss";
+@import "../../sass/colors.scss";
+
+.searchBox {
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .container {
+        overflow: hidden;
+        position: absolute;
+        right: 100%;
+        margin-right: 3px;
+        border-radius: 12px;
+
+        @include bp(tablet) {
+            top: 250%;
+            right: 0;
+            width: calc(100vw - 20px - 14px);
+        }
+
+        input {
+            transition: all 0.5s ease-in-out;
+            border: none;
+            outline: none;
+            background: $search-input-bg;
+            border-radius: 12px;
+            padding: 6px;
+
+            @include bp(tablet) {
+                width: 100%;
+            }
+        }
+    }
+
+    .searchButton {
+        @include normalizeBtn();
+    }
+}

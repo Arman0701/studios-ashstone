@@ -1,0 +1,72 @@
+@import "../../../sass/colors.scss";
+@import "../../../sass/mixins.scss";
+
+.navigationMenu {
+    display: flex;
+    justify-content: center;
+
+    .sections {
+        display: flex;
+        gap: 32px;
+
+        & button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            position: relative;
+            padding: 22px 0;
+            @include textStandard();
+            @include normalizeBtn();
+
+            &:hover>.tooltip {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+
+            .tooltip {
+                display: none;
+                min-width: 175px;
+                flex-direction: column;
+                padding: 20px 15px;
+                border: 1px solid $main-gray;
+                background: white;
+
+                .nestedButton {
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $main-gray;
+
+                    p {
+                        font-size: 13px;
+                        font-weight: 400;
+                        line-height: 13px;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+
+                    &:hover p {
+                        transform: translateX(10px);
+                        color: $hovered-gray;
+                    }
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                        border-bottom: none;
+                    }
+
+                    .chevron {
+                        transform: rotate(-90deg)
+                    }
+                }
+            }
+        }
+    }
+}

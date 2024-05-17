@@ -1,0 +1,17 @@
+.header {
+    position: sticky;
+    top: 0px;
+    background: white;
+    transition: all 0.25s ease-in-out;
+
+    .headerTop {
+        padding: 29px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .logoContainer {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

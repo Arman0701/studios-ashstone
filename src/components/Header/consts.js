@@ -1,0 +1,1 @@
+export const HEADER_SHOULD_BE_HIDDEN = 200;

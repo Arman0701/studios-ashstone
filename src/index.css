@@ -5,3 +5,7 @@
   user-select: none;
   font-family: "Roboto", sans-serif;
 }
+
+html {
+  scrollbar-gutter: stable both-edges;
+}
