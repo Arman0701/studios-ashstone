@@ -26,5 +26,3 @@ dist-ssr
 # custom ignores
 .fttemplates
 /build
-.firebase
-firebase.json
