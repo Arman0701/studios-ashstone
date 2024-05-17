@@ -1,7 +1,7 @@
-import style from "./Modal.module.scss"
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
-import crossIcon from "../../assets/images/cross-icon.png";
+import style from './Modal.module.scss';
+import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import crossIcon from '../../assets/images/cross-icon.png';
 
 export const Modal = ({ isOpen, toggle, children }) => {
     useEffect(() => {
@@ -10,13 +10,13 @@ export const Modal = ({ isOpen, toggle, children }) => {
         }
         return () => {
             document.body.style.overflowY = 'visible';
-        }
+        };
     }, [isOpen]);
 
     return createPortal(
         isOpen ? (
             <div className={style.modalOverlay} onClick={toggle}>
-                <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
+                <div className={style.modalContent} onClick={e => e.stopPropagation()}>
                     <header>
                         <button className={style.closeBtn} onClick={toggle}>
                             <img src={crossIcon} alt={style.closeBtn} />
@@ -26,6 +26,6 @@ export const Modal = ({ isOpen, toggle, children }) => {
                 </div>
             </div>
         ) : null,
-        document.getElementById("modal-root")
+        document.getElementById('modal-root'),
     );
-}
+};

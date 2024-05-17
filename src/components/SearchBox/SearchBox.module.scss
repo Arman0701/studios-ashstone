@@ -2,7 +2,7 @@
 @import "../../sass/colors.scss";
 
 .searchBox {
-    border-radius: 5px 0 0 5px;
+    border-radius: 0.313rem 0 0 0.313rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -11,8 +11,8 @@
         overflow: hidden;
         position: absolute;
         right: 100%;
-        margin-right: 3px;
-        border-radius: 12px;
+        margin-right: 0.188rem;
+        border-radius: 0.75rem;
 
         @include bp(tablet) {
             top: 250%;
@@ -25,8 +25,8 @@
             border: none;
             outline: none;
             background: $search-input-bg;
-            border-radius: 12px;
-            padding: 6px;
+            border-radius: 0.75rem;
+            padding: 0.375rem;
 
             @include bp(tablet) {
                 width: 100%;

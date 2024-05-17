@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const firebaseConfig = {
     apiKey: import.meta.env.F_API_KEY,
     authDomain: import.meta.env.F_AUTH_DOMAIN,

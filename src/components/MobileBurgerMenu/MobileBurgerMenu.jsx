@@ -5,21 +5,16 @@ import { useResizeContext } from '../../contexts/ResizeContext';
 export const MobileBurgerMenu = ({ toggler }) => {
     const { width } = useResizeContext();
 
-    return (
-        width > 768 ? (
-            <div style={{
+    return width > 768 ? (
+        <div
+            style={{
                 width: 25,
                 height: 16,
-            }}></div>
-        ) : (
-            <button className={style.menuButton}>
-                <img
-                    onClick={toggler}
-                    src={mobileMenuIcon}
-                    alt="menu icon"
-                    className={style.menuIcon}
-                />
-            </button>
-        )
+            }}
+        ></div>
+    ) : (
+        <button className={style.menuButton}>
+            <img onClick={toggler} src={mobileMenuIcon} alt="menu icon" className={style.menuIcon} />
+        </button>
     );
 };

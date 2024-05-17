@@ -1,21 +1,24 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
-import { EMPTY_POST_MESSAGE } from "./consts";
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { EMPTY_POST_MESSAGE } from './consts';
 
 const SearchContext = createContext(undefined);
 const SearchProvider = ({ children }) => {
     const [actualData, setActualData] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const initDataToBeSearched = useCallback((inclomingData) => {
-        setActualData(inclomingData);
-    }, [actualData]);
+    const initDataToBeSearched = useCallback(
+        inclomingData => {
+            setActualData(inclomingData);
+        },
+        []
+    );
 
-    const updateSearchQuery = useCallback((query) => {
+    const updateSearchQuery = useCallback(query => {
         setSearchQuery(query);
     }, []);
 
     const filtered = useMemo(() => {
-        const resultingData = actualData.filter((post) => {
+        const resultingData = actualData.filter(post => {
             const q = searchQuery.toLowerCase();
             if (!q) {
                 return true;
@@ -24,12 +27,10 @@ const SearchProvider = ({ children }) => {
             const author = post?.autor?.toLowerCase()?.includes(q);
             const tags = post?.tags?.toLowerCase()?.includes(q);
 
-            return (
-                title || author || tags
-            )
+            return title || author || tags;
         });
         return resultingData;
-    }, [searchQuery]);
+    }, [searchQuery, actualData]);
 
     const displayingData = useMemo(() => {
         if (filtered.length) {
@@ -37,7 +38,7 @@ const SearchProvider = ({ children }) => {
         } else if (searchQuery) {
             return EMPTY_POST_MESSAGE;
         }
-        return actualData
+        return actualData;
     }, [actualData, filtered, searchQuery]);
 
     const contextValue = {
@@ -47,16 +48,9 @@ const SearchProvider = ({ children }) => {
         searched: displayingData,
     };
 
-    return (
-        <SearchContext.Provider value={contextValue}>
-            {children}
-        </SearchContext.Provider>
-    )
-}
+    return <SearchContext.Provider value={contextValue}>{children}</SearchContext.Provider>;
+};
 
 const useSearchContext = () => useContext(SearchContext);
 
-export {
-    SearchProvider,
-    useSearchContext,
-}
+export { SearchProvider, useSearchContext };

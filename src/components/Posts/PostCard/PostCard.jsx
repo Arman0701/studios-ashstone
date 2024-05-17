@@ -6,15 +6,15 @@ import { Modal } from '../../Modal/Modal';
 export const PostCard = ({ post }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const changeModalVisibilityHandler = () => {
-        setIsModalOpen(!isModalOpen)
-    }
+        setIsModalOpen(!isModalOpen);
+    };
     const ActualCard = () => {
         return (
             <>
                 <img
                     src={post.img}
                     srcSet={`${post.img_2x} 768w`}
-                    sizes='(max-width: 768px) 768px'
+                    sizes="(max-width: 768px) 768px"
                     alt={post.title}
                     title={post.title}
                 />
@@ -31,8 +31,8 @@ export const PostCard = ({ post }) => {
                     <p className={style.description}>{post.text}</p>
                 </div>
             </>
-        )
-    }
+        );
+    };
 
     return (
         <>

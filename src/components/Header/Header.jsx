@@ -26,17 +26,18 @@ export const Header = () => {
         }
 
         prevScrollY.current = currentScrollY;
-    }, [prevScrollY.current]);
+    }, []);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+        // eslint-disable-next-line
     }, []);
 
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
     const changeMenuVisibility = () => {
-        setIsMobileMenuVisible(!isMobileMenuVisible)
-    }
+        setIsMobileMenuVisible(!isMobileMenuVisible);
+    };
 
     return (
         <header
@@ -45,14 +46,9 @@ export const Header = () => {
                 transform: `translateY(${isHeaderVisible ? '0' : '-100%'})`,
             }}
         >
-            {
-                width < 768 ? (
-                    <NavigationMenuMobile
-                        toggler={changeMenuVisibility}
-                        isVisible={isMobileMenuVisible}
-                    />
-                ) : null
-            }
+            {width < 768 ? (
+                <NavigationMenuMobile toggler={changeMenuVisibility} isVisible={isMobileMenuVisible} />
+            ) : null}
             <Container>
                 <section className={style.headerTop}>
                     <MobileBurgerMenu toggler={changeMenuVisibility} />
@@ -63,13 +59,11 @@ export const Header = () => {
                 </section>
             </Container>
             <Divider />
-            {
-                width > 768 ? (
-                    <Container>
-                        <NavigationMenu />
-                    </Container>
-                ) : null
-            }
+            {width > 768 ? (
+                <Container>
+                    <NavigationMenu />
+                </Container>
+            ) : null}
             <Divider />
         </header>
     );

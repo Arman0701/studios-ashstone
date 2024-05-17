@@ -18,7 +18,11 @@ export const NavigationMenu = () => {
                                             return (
                                                 <button key={sub.id} className={style.nestedButton}>
                                                     <p>{sub.title}</p>
-                                                    <img src={chevronIcon} alt="chevron icon" className={style.chevron} />
+                                                    <img
+                                                        src={chevronIcon}
+                                                        alt="chevron icon"
+                                                        className={style.chevron}
+                                                    />
                                                 </button>
                                             );
                                         })}
