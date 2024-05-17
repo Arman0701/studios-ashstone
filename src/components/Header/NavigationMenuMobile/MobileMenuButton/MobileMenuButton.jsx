@@ -11,7 +11,7 @@ export const MobileMenuButton = ({ button, options }) => {
             </button>
             {button.nested && button.isExpanded ? (
                 <section>
-                    {button.nested.map((b) => {
+                    {button.nested.map(b => {
                         return (
                             <a key={b.id} href="#">
                                 <span>{b.title}</span>

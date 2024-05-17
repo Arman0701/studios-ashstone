@@ -27,10 +27,13 @@ export const NavigationMenuMobile = ({ toggler, isVisible }) => {
         });
     }, [currentExpanded]);
 
-    return true ? (
-        <div className={style.container} style={{
-            transform: `translateX(${isVisible ? '0' : '-100%'})`
-        }}>
+    return (
+        <div
+            className={style.container}
+            style={{
+                transform: `translateX(${isVisible ? '0' : '-100%'})`,
+            }}
+        >
             <section className={style.menuContent}>
                 <header className={style.header}>
                     <a href="#">
@@ -54,11 +57,15 @@ export const NavigationMenuMobile = ({ toggler, isVisible }) => {
                     })}
                 </div>
             </section>
-            <div className={style.backdrop} onClick={toggler} style={{
-                opacity: isVisible ? '1' : '0',
-                width: isVisible ? '15%' : "0",
-                height: isVisible ? '100%' : "0",
-            }}></div>
+            <div
+                className={style.backdrop}
+                onClick={toggler}
+                style={{
+                    opacity: isVisible ? '1' : '0',
+                    width: isVisible ? '15%' : '0',
+                    height: isVisible ? '100%' : '0',
+                }}
+            ></div>
         </div>
-    ) : null;
+    );
 };

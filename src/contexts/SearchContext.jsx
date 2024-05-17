@@ -6,12 +6,9 @@ const SearchProvider = ({ children }) => {
     const [actualData, setActualData] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    const initDataToBeSearched = useCallback(
-        inclomingData => {
-            setActualData(inclomingData);
-        },
-        []
-    );
+    const initDataToBeSearched = useCallback(inclomingData => {
+        setActualData(inclomingData);
+    }, []);
 
     const updateSearchQuery = useCallback(query => {
         setSearchQuery(query);
